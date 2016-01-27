@@ -1,0 +1,17 @@
+Found: 21.10.2009
+AuxSort: 11
+Elevation: 
+Up: 
+Category: 
+AltCategory1: 
+AltCategory2: 
+Access: 
+Search: 
+OverallTime: 
+Judgement: 
+FTF: 
+Optional1: 
+Optional2: 
+Optional3: 
+NCId: 
+OCId: 
