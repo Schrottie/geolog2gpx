@@ -3,10 +3,9 @@
 GEOLOG_PATH="/home/schrottie/Google Drive/geolog/gcdir/found"
 # GPX erzeugen
 FILENAME=`date +%Y-%m-%d-%H-%M`.gpx
-touch ./$FILENAME
 
 # GPX-Kopfbereich schreiben
-echo '<?xml version="1.0" encoding="utf-8"?>' >> ./$FILENAME;
+echo '<?xml version="1.0" encoding="utf-8"?>' > ./$FILENAME;
 echo '<gpx>' >> ./$FILENAME;
 
 # Wegpunkte schreiben
