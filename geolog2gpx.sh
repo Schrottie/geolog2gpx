@@ -17,39 +17,39 @@ echo '<gpx>' >> ./$FILENAME;
 CACHE_FOLDERS=`find "$GEOLOG_PATH" -maxdepth 1 -type d`
 
 for i in $CACHE_FOLDERS; do
+    ID=$(grep -a "GCid" $i/cache.txt | awk '{print $2}')
 
     # Hat der Cache eine OC-ID?
-    if [ "$(grep "GCid" $i/cache.txt | awk '{print $2}')" = "" ] ; then
+    if [ "$ID" = "" ] ; then
         echo "Kein GC-Cache, überspringe Eintrag!"
         continue
     fi
-    ID=$(grep "GCid" $i/cache.txt | awk '{print $2}')
     # ID steht, also noch die anderen Werte aus der cache.txt holen.
-    NAME=$(grep "Name" $i/cache.txt | awk '{print $2}')
-    LAT=$(grep "Lat" $i/cache.txt | awk '{print $2}')
-    LON=$(grep "Lon" $i/cache.txt | awk '{print $2}')
+    NAME=$(grep -a "Name" $i/cache.txt | awk '{print $2}')
+    LAT=$(grep -a "Lat" $i/cache.txt | awk '{print $2}')
+    LON=$(grep -a "Lon" $i/cache.txt | awk '{print $2}')
 
     # Beim Cachetyp hat der korrekte Name Leerzeichen, also nacharbeiten.
-    if [ $(grep "Type" $i/cache.txt | awk '{print $2}') = "Traditional" ] ; then
+    if [ $(grep -a "Type" $i/cache.txt | awk '{print $2}') = "Traditional" ] ; then
         TYPE="Traditional Cache"
     else
-        if [ $(grep "Type" $i/cache.txt | awk '{print $2}') = "Virtual" ] ; then
+        if [ $(grep -a "Type" $i/cache.txt | awk '{print $2}') = "Virtual" ] ; then
             TYPE="Virtual Cache"
         else
-            if [ $(grep "Type" $i/cache.txt | awk '{print $2}') = "Event" ] ; then
+            if [ $(grep -a "Type" $i/cache.txt | awk '{print $2}') = "Event" ] ; then
                 TYPE="Event Cache"
             else
-                if [ $(grep "Type" $i/cache.txt | awk '{print $2}') = "Webcam" ] ; then
+                if [ $(grep -a "Type" $i/cache.txt | awk '{print $2}') = "Webcam" ] ; then
                     TYPE="Webcam Cache"
                 else
-                    if [ $(grep "Type" $i/cache.txt | awk '{print $2}') = "Unknown" ] ; then
+                    if [ $(grep -a "Type" $i/cache.txt | awk '{print $2}') = "Unknown" ] ; then
                         TYPE="Unknown Cache"
                     else
-                        if [ $(grep "Type" $i/cache.txt | awk '{print $2}') = "Letterbox" ] ; then
+                        if [ $(grep -a "Type" $i/cache.txt | awk '{print $2}') = "Letterbox" ] ; then
                         TYPE="Letterbox hybrid"
                         else
                             # Nur der Multi steht schon richtig in der Variable. ;)
-                            TYPE=$(grep "Type" $i/cache.txt | awk '{print $2}')
+                            TYPE=$(grep -a "Type" $i/cache.txt | awk '{print $2}')
                         fi
                     fi
                 fi
@@ -57,9 +57,9 @@ for i in $CACHE_FOLDERS; do
         fi
     fi
     # Und noch den Rest einsammeln.
-    CONTAINER=$(grep "Container:" $i/cache.txt | awk '{print $2}')
-    DIFF=$(grep "Difficulty" $i/cache.txt | awk '{print $2}')
-    TERR=$(grep "Terrain" $i/cache.txt | awk '{print $2}')
+    CONTAINER=$(grep -a "Container:" $i/cache.txt | awk '{print $2}')
+    DIFF=$(grep -a "Difficulty" $i/cache.txt | awk '{print $2}')
+    TERR=$(grep -a "Terrain" $i/cache.txt | awk '{print $2}')
     # Ab damit ins GPX.
     echo "Bearbeite: "$ID;
     echo '  <wpt lat="'$LAT'" lon="'$LON'">' >> ./$FILENAME;
