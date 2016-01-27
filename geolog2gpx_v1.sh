@@ -27,7 +27,7 @@ echo '  <time>'$GPXDATE'</time>' >> ./$FILENAME;
 cd "$GEOLOG_PATH"
 CACHE_FOLDERS=`find . -maxdepth 1 -type d`
 
-for i in $CACHE_FOLDERS ;
+for i in $CACHE_FOLDERS ; 
 
 do
 
@@ -88,6 +88,7 @@ echo '	    <src>geolog-database</src>' >> ../../$FILENAME;
 echo '	    <urlname>Bellevue</urlname>' >> ../../$FILENAME;
 echo '	    <sym>Geocache Found</sym>' >> ../../$FILENAME;
 echo '	    <type>Geocache|'$TYPE'</type>' >> ../../$FILENAME;
+echo '	    <groundspeak:cache>' >> ../../$FILENAME;
 echo '	      <groundspeak:name>'$NAME'</groundspeak:name>' >> ../../$FILENAME;
 echo '	      <groundspeak:placed_by>'$OWNER'</groundspeak:placed_by>' >> ../../$FILENAME;
 echo '	      <groundspeak:owner id="'$OWNERID'">'$OWNER'</groundspeak:owner>' >> ../../$FILENAME;
