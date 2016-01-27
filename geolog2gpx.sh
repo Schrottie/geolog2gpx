@@ -21,7 +21,7 @@ for i in $CACHE_FOLDERS; do
 
     # Hat der Cache eine OC-ID?
     if [ "$ID" = "" ] ; then
-        echo "Kein GC-Cache, überspringe Eintrag!"
+        echo "Kein GC-Cache: $i, überspringe Eintrag!"
         continue
     fi
     # ID steht, also noch die anderen Werte aus der cache.txt holen.
@@ -49,7 +49,7 @@ for i in $CACHE_FOLDERS; do
     DIFF=$(grep -a "Difficulty" $i/cache.txt | awk '{print $2}')
     TERR=$(grep -a "Terrain" $i/cache.txt | awk '{print $2}')
     # Ab damit ins GPX.
-    echo "Bearbeite: "$ID;
+    echo "Bearbeite: $ID ($i)";
     echo '  <wpt lat="'$LAT'" lon="'$LON'">' >> ./$FILENAME;
     echo '      <name>'$ID'</name>' >> ./$FILENAME;
     echo '      <groundspeak:cache>' >> ./$FILENAME;
