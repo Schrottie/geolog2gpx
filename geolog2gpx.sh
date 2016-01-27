@@ -9,8 +9,7 @@ echo '<?xml version="1.0" encoding="utf-8"?>' > ./$FILENAME;
 echo '<gpx>' >> ./$FILENAME;
 
 # Wegpunkte schreiben
-cd "$GEOLOG_PATH"
-CACHE_FOLDERS=`find . -maxdepth 1 -type d`
+CACHE_FOLDERS=`find "$GEOLOG_PATH" -maxdepth 1 -type d`
 
 for i in $CACHE_FOLDERS ;
 
@@ -59,18 +58,18 @@ do
         TERR=$(grep "Terrain" $i/cache.txt | awk '{print $2}')
         # Ab damit ins GPX.
         echo "Bearbeite: "$ID;
-        echo '  <wpt lat="'$LAT'" lon="'$LON'">' >> ../../$FILENAME;
-        echo '      <name>'$ID'</name>' >> ../../$FILENAME;
-        echo '      <groundspeak:cache>' >> ../../$FILENAME;
-        echo '          <groundspeak:name>'$NAME'</groundspeak:name>' >> ../../$FILENAME;
-        echo '          <groundspeak:type>'$TYPE'</groundspeak:type>' >> ../../$FILENAME;
-        echo '          <groundspeak:difficulty>'$DIFF'</groundspeak:difficulty>' >> ../../$FILENAME;
-        echo '          <groundspeak:terrain>'$TERR'</groundspeak:terrain>' >> ../../$FILENAME;
-        echo '      </groundspeak:cache>' >> ../../$FILENAME;
-        echo '  </wpt>' >> ../../$FILENAME;
+        echo '  <wpt lat="'$LAT'" lon="'$LON'">' >> ./$FILENAME;
+        echo '      <name>'$ID'</name>' >> ./$FILENAME;
+        echo '      <groundspeak:cache>' >> ./$FILENAME;
+        echo '          <groundspeak:name>'$NAME'</groundspeak:name>' >> ./$FILENAME;
+        echo '          <groundspeak:type>'$TYPE'</groundspeak:type>' >> ./$FILENAME;
+        echo '          <groundspeak:difficulty>'$DIFF'</groundspeak:difficulty>' >> ./$FILENAME;
+        echo '          <groundspeak:terrain>'$TERR'</groundspeak:terrain>' >> ./$FILENAME;
+        echo '      </groundspeak:cache>' >> ./$FILENAME;
+        echo '  </wpt>' >> ./$FILENAME;
     fi
 
 done
 
 # Und das GPX ordnungsgemäß zumachen.
-echo '</gpx>' >> ../../$FILENAME;
+echo '</gpx>' >> ./$FILENAME;
