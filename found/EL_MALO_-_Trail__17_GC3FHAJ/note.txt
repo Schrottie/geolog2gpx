@@ -1,0 +1,17 @@
+Found: 07.10.2012
+AuxSort: 15
+Elevation: 
+Up: 
+Category: 
+AltCategory1: 
+AltCategory2: 
+Access: 
+Search: 
+OverallTime: 
+Judgement: 
+FTF: 
+Optional1: 
+Optional2: 
+Optional3: 
+NCId: 
+OCId: 

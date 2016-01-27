@@ -1,0 +1,16 @@
+Name: Besondere Schienen
+GCid: 
+Owner: lodgebrandenburg
+Lat: 52.4135833333333
+Lon: 13.0889666666667
+Type: Virtual Cache
+#CacheSizeIdx: 0=Unknown; 1=Micro; 2=Small; 3=Regular; 4=Large; 5=Other; 6=Virtual; 7=Not chosen; 8=Nano
+ContainerIdx: 6
+Container: Virtual
+Difficulty: 2
+Terrain: 1
+Hidden: 13.08.2012
+Country: Germany
+State: Brandenburg
+Attributes: 
+Status: ok

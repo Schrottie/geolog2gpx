@@ -1,0 +1,19 @@
+Name: EL MALO - Trail #17
+GCid: GC3FHAJ
+Owner: El Malo
+Ownerid: 4869249
+Lat: 52.5559833333333
+Lon: 12.3837333333333
+LatCorrected: 
+LonCorrected: 
+Type: Traditional Cache
+#CacheSizeIdx: 0=Unknown; 1=Micro; 2=Small; 3=Regular; 4=Large; 5=Other; 6=Virtual; 7=Not chosen; 
+ContainerIdx: 1
+Container: Micro
+Difficulty: 1.5
+Terrain: 2
+Hidden: 27.03.2012
+Country: Germany
+State: Brandenburg
+Attributes: motorcycles-no, snowmobiles-no, jeeps-no, quads-no, bicycles-yes, available-yes, ticks-yes
+Status: archived

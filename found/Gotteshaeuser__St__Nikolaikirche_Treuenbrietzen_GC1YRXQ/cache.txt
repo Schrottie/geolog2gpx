@@ -1,0 +1,17 @@
+Name: Gotteshäuser: St. Nikolaikirche Treuenbrietzen
+GCid: GC1YRXQ
+Owner: la_principessa
+Ownerid: 1633314
+Lat: 52.09515
+Lon: 12.8707166666667
+Type: Traditional Cache
+#ContainerIdx: 0=Unknown; 1=Micro; 2=Small; 3=Regular; 4=Large; 5=Other; 6=Virtual; 7=Not chosen; 
+ContainerIdx: 1
+Container: Micro
+Difficulty: 2
+Terrain: 1
+Hidden: 17.09.2009
+Country: Germany
+State: Brandenburg
+Attributes: wheelchair-no, stealth-yes, kids-yes, parking-yes, winter-yes, night-yes, available-yes, attribute-blank, attribute-blank, attribute-blank, attribute-blank, attribute-blank
+Status: ok

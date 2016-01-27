@@ -1,0 +1,17 @@
+Name: Auf den Spuren des Teufels
+GCid: GCWD0F
+Owner: Sturmpiraten
+Ownerid: 169598
+Lat: 52.4237166666667
+Lon: 13.6291
+Type: Multi-cache
+#ContainerIdx: 0=Unknown; 1=Micro; 2=Small; 3=Regular; 4=Large; 5=Other; 6=Virtual; 7=Not chosen; 
+ContainerIdx: 3
+Container: Regular
+Difficulty: 2.5
+Terrain: 2
+Hidden: 03.06.2006
+Country: Germany
+State: Berlin
+Attributes: 
+Status: archived

@@ -1,0 +1,17 @@
+Name: Gartenzwerg ( ODER "Mord im Laternenschein" )
+GCid: GC164HY
+Owner: Gartenzwerge Berlin
+Ownerid: 1135469
+Lat: 52.44135
+Lon: 13.30115
+Type: Traditional Cache
+#ContainerIdx: 0=Unknown; 1=Micro; 2=Small; 3=Regular; 4=Large; 5=Other; 6=Virtual; 7=Not chosen; 
+ContainerIdx: 5
+Container: Other
+Difficulty: 1.5
+Terrain: 1
+Hidden: 22.09.2007
+Country: Germany
+State: Berlin
+Attributes: bicycles-yes, available-yes, dogs-yes, motorcycles-yes, attribute-blank, attribute-blank
+Status: archived

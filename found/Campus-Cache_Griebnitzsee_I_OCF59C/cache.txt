@@ -1,0 +1,16 @@
+Name: Campus-Cache Griebnitzsee I
+GCid: 
+Owner: acg.cache
+Lat: 52.3928166666667
+Lon: 13.1271166666667
+Type: Traditional Cache
+#CacheSizeIdx: 0=Unknown; 1=Micro; 2=Small; 3=Regular; 4=Large; 5=Other; 6=Virtual; 7=Not chosen; 8=Nano
+ContainerIdx: 1
+Container: Micro
+Difficulty: 1.5
+Terrain: 1
+Hidden: 15.04.2013
+Country: Germany
+State: Brandenburg
+Attributes: 
+Status: archived

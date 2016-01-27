@@ -1,0 +1,17 @@
+Name: POSTHENGE
+GCid: GC1HENF
+Owner: g-berlin
+Ownerid: 1633656
+Lat: 52.5013166666667
+Lon: 13.2268666666667
+Type: Multi-cache
+#ContainerIdx: 0=Unknown; 1=Micro; 2=Small; 3=Regular; 4=Large; 5=Other; 6=Virtual; 7=Not chosen; 
+ContainerIdx: 2
+Container: Small
+Difficulty: 2
+Terrain: 2.5
+Hidden: 30.10.2008
+Country: Germany
+State: Berlin
+Attributes: wheelchair-no, bicycles-yes, thorn-yes, public-yes, winter-yes, available-yes, dogs-yes, attribute-blank, attribute-blank, attribute-blank, attribute-blank, attribute-blank
+Status: archived

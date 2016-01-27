@@ -1,0 +1,19 @@
+Found: 13.04.2014
+AuxSort: 22
+Elevation: 
+Up: 
+Category: 
+AltCategory1: 
+AltCategory2: 
+Access: 
+Search: 
+OverallTime: 
+Judgement: 
+FTF: 
+Optional1: oco.png
+Optional2: 
+Optional3: 
+OCId: OCF0A1
+NCId: 
+
+OCCacheId: 164690

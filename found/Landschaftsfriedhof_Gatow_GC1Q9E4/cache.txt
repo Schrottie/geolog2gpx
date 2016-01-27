@@ -1,0 +1,17 @@
+Name: Landschaftsfriedhof Gatow
+GCid: GC1Q9E4
+Owner: Cybermaster
+Ownerid: 622073
+Lat: 52.4973666666667
+Lon: 13.1546333333333
+Type: Traditional Cache
+#ContainerIdx: 0=Unknown; 1=Micro; 2=Small; 3=Regular; 4=Large; 5=Other; 6=Virtual; 7=Not chosen; 
+ContainerIdx: 1
+Container: Micro
+Difficulty: 1
+Terrain: 1.5
+Hidden: 19.04.2009
+Country: Germany
+State: Berlin
+Attributes: bicycles-yes, onehour-yes, parking-yes, available-yes, motorcycles-yes, attribute-blank
+Status: ok
