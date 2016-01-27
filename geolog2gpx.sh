@@ -1,6 +1,11 @@
 #!/bin/bash
-#
-GEOLOG_PATH="/home/schrottie/Google Drive/geolog/gcdir/found"
+
+if [ -z "$1" ]; then
+    GEOLOG_PATH="/home/schrottie/Google Drive/geolog/gcdir/found"
+else
+    GEOLOG_PATH="$1"
+fi
+
 # GPX erzeugen
 FILENAME=`date +%Y-%m-%d-%H-%M`.gpx
 
