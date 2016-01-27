@@ -14,7 +14,7 @@ echo '<?xml version="1.0" encoding="utf-8"?>' > ./$FILENAME;
 echo '<gpx>' >> ./$FILENAME;
 
 # Wegpunkte schreiben
-CACHE_FOLDERS=`find "$GEOLOG_PATH" -maxdepth 1 -type d`
+CACHE_FOLDERS=`find "$GEOLOG_PATH" -mindepth 1 -maxdepth 1 -type d`
 
 for i in $CACHE_FOLDERS; do
     ID=$(grep -a "GCid" $i/cache.txt | awk '{print $2}')
