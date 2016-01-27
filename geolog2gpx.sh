@@ -31,32 +31,19 @@ for i in $CACHE_FOLDERS; do
     TYPE_RAW=$(grep -a "Type" $i/cache.txt | awk '{print $2}')
 
     # Beim Cachetyp hat der korrekte Name Leerzeichen, also nacharbeiten.
-    if [ "$TYPE_RAW" = "Traditional" ] ; then
-        TYPE="Traditional Cache"
-    else
-        if [ "$TYPE_RAW" = "Virtual" ] ; then
-            TYPE="Virtual Cache"
-        else
-            if [ "$TYPE_RAW" = "Event" ] ; then
-                TYPE="Event Cache"
-            else
-                if [ "$TYPE_RAW" = "Webcam" ] ; then
-                    TYPE="Webcam Cache"
-                else
-                    if [ "$TYPE_RAW" = "Unknown" ] ; then
-                        TYPE="Unknown Cache"
-                    else
-                        if [ "$TYPE_RAW" = "Letterbox" ] ; then
-                        TYPE="Letterbox hybrid"
-                        else
-                            # Nur der Multi steht schon richtig in der Variable. ;)
-                            TYPE="$TYPE_RAW"
-                        fi
-                    fi
-                fi
-            fi
-        fi
-    fi
+    case "$TYPE_RAW" in
+        "Traditional"|"Virtual"|"Event"|"Webcam"|"Unknown")
+            TYPE="$TYPE_RAW Cache"
+            ;;
+        "Letterbox")
+            TYPE="Letterbox hybrid"
+            ;;
+        *)
+            # Nur der Multi steht schon richtig in der Variable. ;)
+            TYPE="$TYPE_RAW"
+            ;;
+    esac
+
     # Und noch den Rest einsammeln.
     CONTAINER=$(grep -a "Container:" $i/cache.txt | awk '{print $2}')
     DIFF=$(grep -a "Difficulty" $i/cache.txt | awk '{print $2}')
