@@ -28,28 +28,29 @@ for i in $CACHE_FOLDERS; do
     NAME=$(grep -a "Name" $i/cache.txt | awk '{print $2}')
     LAT=$(grep -a "Lat" $i/cache.txt | awk '{print $2}')
     LON=$(grep -a "Lon" $i/cache.txt | awk '{print $2}')
+    TYPE_RAW=$(grep -a "Type" $i/cache.txt | awk '{print $2}')
 
     # Beim Cachetyp hat der korrekte Name Leerzeichen, also nacharbeiten.
-    if [ $(grep -a "Type" $i/cache.txt | awk '{print $2}') = "Traditional" ] ; then
+    if [ "$TYPE_RAW" = "Traditional" ] ; then
         TYPE="Traditional Cache"
     else
-        if [ $(grep -a "Type" $i/cache.txt | awk '{print $2}') = "Virtual" ] ; then
+        if [ "$TYPE_RAW" = "Virtual" ] ; then
             TYPE="Virtual Cache"
         else
-            if [ $(grep -a "Type" $i/cache.txt | awk '{print $2}') = "Event" ] ; then
+            if [ "$TYPE_RAW" = "Event" ] ; then
                 TYPE="Event Cache"
             else
-                if [ $(grep -a "Type" $i/cache.txt | awk '{print $2}') = "Webcam" ] ; then
+                if [ "$TYPE_RAW" = "Webcam" ] ; then
                     TYPE="Webcam Cache"
                 else
-                    if [ $(grep -a "Type" $i/cache.txt | awk '{print $2}') = "Unknown" ] ; then
+                    if [ "$TYPE_RAW" = "Unknown" ] ; then
                         TYPE="Unknown Cache"
                     else
-                        if [ $(grep -a "Type" $i/cache.txt | awk '{print $2}') = "Letterbox" ] ; then
+                        if [ "$TYPE_RAW" = "Letterbox" ] ; then
                         TYPE="Letterbox hybrid"
                         else
                             # Nur der Multi steht schon richtig in der Variable. ;)
-                            TYPE=$(grep -a "Type" $i/cache.txt | awk '{print $2}')
+                            TYPE="$TYPE_RAW"
                         fi
                     fi
                 fi
