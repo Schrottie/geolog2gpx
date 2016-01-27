@@ -28,21 +28,7 @@ for i in $CACHE_FOLDERS; do
     NAME=$(grep -a "Name" $i/cache.txt | awk '{print $2}')
     LAT=$(grep -a "Lat" $i/cache.txt | awk '{print $2}')
     LON=$(grep -a "Lon" $i/cache.txt | awk '{print $2}')
-    TYPE_RAW=$(grep -a "Type" $i/cache.txt | awk '{print $2}')
-
-    # Beim Cachetyp hat der korrekte Name Leerzeichen, also nacharbeiten.
-    case "$TYPE_RAW" in
-        "Traditional"|"Virtual"|"Event"|"Webcam"|"Unknown")
-            TYPE="$TYPE_RAW Cache"
-            ;;
-        "Letterbox")
-            TYPE="Letterbox hybrid"
-            ;;
-        *)
-            # Nur der Multi steht schon richtig in der Variable. ;)
-            TYPE="$TYPE_RAW"
-            ;;
-    esac
+    TYPE=$(grep -a "Type" $i/cache.txt | cut -d' ' -f2-)
 
     # Und noch den Rest einsammeln.
     CONTAINER=$(grep -a "Container:" $i/cache.txt | awk '{print $2}')
