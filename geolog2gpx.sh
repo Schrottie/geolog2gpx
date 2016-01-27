@@ -14,10 +14,10 @@ echo '<?xml version="1.0" encoding="utf-8"?>' > ./$FILENAME;
 echo '<gpx>' >> ./$FILENAME;
 
 # Wegpunkte schreiben
-CACHE_FOLDERS=`find "$GEOLOG_PATH" -mindepth 1 -maxdepth 1 -type d`
+find "$GEOLOG_PATH" -mindepth 1 -maxdepth 1 -type d -print0 | \
+while IFS= read -r -d '' i; do
 
-for i in $CACHE_FOLDERS; do
-    ID=$(grep -a "GCid:" $i/cache.txt | awk '{print $2}')
+    ID=$(grep -a "GCid:" "$i/cache.txt" | awk '{print $2}')
 
     # Hat der Cache eine OC-ID?
     if [ "$ID" = "" ] ; then
@@ -25,15 +25,15 @@ for i in $CACHE_FOLDERS; do
         continue
     fi
     # ID steht, also noch die anderen Werte aus der cache.txt holen.
-    NAME=$(grep -a "Name:" $i/cache.txt | awk '{print $2}')
-    LAT=$(grep -a "Lat:" $i/cache.txt | awk '{print $2}')
-    LON=$(grep -a "Lon:" $i/cache.txt | awk '{print $2}')
-    TYPE=$(grep -a "Type:" $i/cache.txt | cut -d' ' -f2-)
+    NAME=$(grep -a "Name:" "$i/cache.txt" | awk '{print $2}')
+    LAT=$(grep -a "Lat:" "$i/cache.txt" | awk '{print $2}')
+    LON=$(grep -a "Lon:" "$i/cache.txt" | awk '{print $2}')
+    TYPE=$(grep -a "Type:" "$i/cache.txt" | cut -d' ' -f2-)
 
     # Und noch den Rest einsammeln.
-    CONTAINER=$(grep -a "Container:" $i/cache.txt | awk '{print $2}')
-    DIFF=$(grep -a "Difficulty:" $i/cache.txt | awk '{print $2}')
-    TERR=$(grep -a "Terrain:" $i/cache.txt | awk '{print $2}')
+    CONTAINER=$(grep -a "Container:" "$i/cache.txt" | awk '{print $2}')
+    DIFF=$(grep -a "Difficulty:" "$i/cache.txt" | awk '{print $2}')
+    TERR=$(grep -a "Terrain:" "$i/cache.txt" | awk '{print $2}')
     # Ab damit ins GPX.
     echo "Bearbeite: $ID ($i)";
     echo '  <wpt lat="'$LAT'" lon="'$LON'">' >> ./$FILENAME;
