@@ -25,7 +25,7 @@ while IFS= read -r -d '' i; do
         continue
     fi
     # ID steht, also noch die anderen Werte aus der cache.txt holen.
-    NAME=$(grep -a "Name:" "$i/cache.txt" | awk '{print $2}')
+    NAME=$(grep -a "Name:" "$i/cache.txt" | cut -d' ' -f2-)
     LAT=$(grep -a "Lat:" "$i/cache.txt" | awk '{print $2}')
     LON=$(grep -a "Lon:" "$i/cache.txt" | awk '{print $2}')
     TYPE=$(grep -a "Type:" "$i/cache.txt" | cut -d' ' -f2-)
