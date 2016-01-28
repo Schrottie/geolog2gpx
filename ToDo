@@ -1,0 +1,6 @@
+1. weitere Informationen zum Cache ins GPX (Owner, Versteckdatum, etc.)
+2. eigenes Fundlog ins GPX
+3. Behandlung von OC-Caches: Auswahlmenü zu Scriptstart (alt. Übergabe
+	als Parameter) ob nur GC-Caches genommen werden sollen, oder alle.
+	Wenn alle, welcher Wegpunkt soll bei Doppellistings genommen werden,
+	GC oder OC?
