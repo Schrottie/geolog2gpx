@@ -1,0 +1,19 @@
+NotFound: 28.05.2013
+LaterFound: 
+AuxSort: 
+Elevation: 
+Up: 
+Category: 
+AltCategory1: 
+AltCategory2: 
+Access: 
+Search: 
+OverallTime: 
+Judgement: 
+FTF: 
+Reason: 
+Optional1: 
+Optional2: 
+Optional3: 
+NCId: 
+OCId: 
