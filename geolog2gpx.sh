@@ -37,11 +37,10 @@ while IFS= read -r -d '' i; do
     LAT=$(grep -a "Lat:" "$i/cache.txt" | awk '{print $2}')
     LON=$(grep -a "Lon:" "$i/cache.txt" | awk '{print $2}')
     TYPE=$(grep -a "Type:" "$i/cache.txt" | cut -d' ' -f2-)
-
-    # Und noch den Rest einsammeln.
     CONTAINER=$(grep -a "Container:" "$i/cache.txt" | awk '{print $2}')
     DIFF=$(grep -a "Difficulty:" "$i/cache.txt" | awk '{print $2}')
     TERR=$(grep -a "Terrain:" "$i/cache.txt" | awk '{print $2}')
+    
     # Ab damit ins GPX.
     echo "Bearbeite: $ID ($i)";
     echo '  <wpt lat="'$LAT'" lon="'$LON'">' >> ./$FILENAME;
