@@ -8,10 +8,18 @@ fi
 
 # GPX erzeugen
 FILENAME=`date +%Y-%m-%d-%H-%M`.gpx
+GPXDATE=$(date +%Y-%m-%dT%H:%M:%SZ)
 
 # GPX-Kopfbereich schreiben
 echo '<?xml version="1.0" encoding="utf-8"?>' > ./$FILENAME;
-echo '<gpx>' >> ./$FILENAME;
+echo '<gpx xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="1.0" creator="Opencaching.de - http://www.opencaching.de/" xsi:schemaLocation="http://www.topografix.com/GPX/1/0 http://www.topografix.com/GPX/1/0/gpx.xsd http://www.groundspeak.com/cache/1/0/1 http://www.groundspeak.com/cache/1/0/1/cache.xsd" xmlns="http://www.topografix.com/GPX/1/0">' >> ./$FILENAME;
+echo '  <name>Cache listing generated from geolog-ocprop-database</name>' >> ./$FILENAME;
+echo '  <desc>This is a waypoint file generated from linux shell</desc>' >> ./$FILENAME;
+echo '  <author>geolog2gpx</author>' >> ./$FILENAME;
+echo '  <email>schrottie@gmail.com</email>' >> ./$FILENAME;
+echo '  <url>https://github.com/Schrottie/geolog2gpx</url>' >> ./$FILENAME;
+echo '  <urlname>Geolog2GPX</urlname>' >> ./$FILENAME;
+echo '  <time>'$GPXDATE'</time>' >> ./$FILENAME;
 
 # Wegpunkte schreiben
 find "$GEOLOG_PATH" -mindepth 1 -maxdepth 1 -type d -print0 | \
