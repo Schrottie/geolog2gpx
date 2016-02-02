@@ -55,6 +55,9 @@ case "$OPT" in
 done
 shift `expr $OPTIND - 1`
 
+BASEPATH=`dirname "$0"`
+SEDFILE="$BASEPATH/htmlentities.sed"
+
 if [ -z "$1" ]; then
     GEOLOG_PATH="/home/schrottie/Google Drive/geolog/gcdir/found"
 else
@@ -108,7 +111,7 @@ while IFS= read -r -d '' i; do
 	fi
 
     # ID steht, also noch die anderen Werte aus der cache.txt holen.
-    NAME=$(grep -a "Name:" "$i/cache.txt" | cut -d' ' -f2-)
+    NAME=$(grep -a "Name:" "$i/cache.txt" | cut -d' ' -f2- | iconv -f iso-8859-1 -t utf-8 | sed -f "$SEDFILE")
     LAT=$(grep -a "Lat:" "$i/cache.txt" | awk '{print $2}')
     LON=$(grep -a "Lon:" "$i/cache.txt" | awk '{print $2}')
     TYPE=$(grep -a "Type:" "$i/cache.txt" | cut -d' ' -f2-)
